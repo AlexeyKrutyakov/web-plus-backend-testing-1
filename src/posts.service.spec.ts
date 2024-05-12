@@ -25,9 +25,10 @@ describe('PostsService', () => {
   it('should find a post', () => {
     // реализуйте тест-кейс
 
-    expect(postsService.find('1')).toMatchObject({
-      id: '1',
-      text: 'Some pre-existing post',
+    const newPost = postsService.create(post);
+    expect(postsService.find(newPost.id)).toMatchObject({
+      id: newPost.id,
+      text: 'Mocked post',
       date: expect.any(String),
     });
   });
