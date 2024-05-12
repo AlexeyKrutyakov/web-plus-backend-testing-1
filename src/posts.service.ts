@@ -26,11 +26,6 @@ export class PostsService {
   }
 
   find(postId: string) {
-    const post = this.posts.find(({ id }) => id === postId);
-    if (post) {
-      return post;
-    } else {
-      throw new Error(`Post with id=${postId} not exists`);
-    }
+    return this.posts.find(({ id }) => id === postId);
   }
 }
